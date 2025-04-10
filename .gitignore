@@ -3,3 +3,4 @@ check
 controller/student.js
 model/student.js
 .env
+.vercel
