@@ -1,4 +1,4 @@
-// index.js
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
@@ -7,7 +7,7 @@ const urlRoute = require('./routes/url');
 const app = express();
 const port = 5001;
 
-mongoose.connect('mongodb+srv://ipl_lsg_team:S9n2k%40sh58@akscluster.z0f9q.mongodb.net/url_shortener?retryWrites=true&w=majority', {
+mongoose.connect(mongo_url, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
