@@ -1,8 +1,9 @@
 require('dotenv').config();
+const mongo_url = process.env.MONGO_URL;
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
-const urlRoute = require('./routes/url');
+const urlRoute = require('../routes/url');
 
 const app = express();
 const port = 5001;
@@ -26,7 +27,7 @@ app.set('port', port);
 app.use('/', urlRoute);
 
 app.get('/', async (req, res) => {
-    const Url = require('./model/url');
+    const Url = require('../model/url');
     const history = await Url.find().sort({ _id: -1 }); // Sort by latest first
     res.render('index', {
         shortUrl: null,
