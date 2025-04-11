@@ -12,7 +12,7 @@ const shorten = async (req, res) => {
 
     try {
         const shortId = shortid.generate();
-        const shortUrl = `http://localhost:${req.app.get('port')}/${shortId}`;
+        const shortUrl = `https://bonaaurlshortener-production.up.railway.app/${shortId}`;
         await Url.create({ shorturl: shortId, longurl: url, visittime: [] });
         const history = await Url.find().sort({ _id: -1 });
         // Render with shortUrl and history, no redirect
@@ -26,7 +26,7 @@ const shorten = async (req, res) => {
 
 const success = async (req, res) => {
     const shortId = req.params.shortId;
-    const shortUrl = `http://localhost:${req.app.get('port')}/${shortId}`;
+    const shortUrl = `https://bonaaurlshortener-production.up.railway.app/${shortId}`;
     const history = await Url.find().sort({ _id: -1 });
     res.render('index', { shortUrl, error: null, history, port: req.app.get('port') });
 };
