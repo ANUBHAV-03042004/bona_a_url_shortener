@@ -111,9 +111,6 @@ Steps:
 4. Push: `git push origin feature/NewFeature`
 5. Open a Pull Request
 
-## License
-MIT License
-
 ## Acknowledgments
 - Jade (Pug) – for simple, elegant templating
 - Express.js & Node.js – core backend
